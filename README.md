@@ -1,24 +1,17 @@
-# README
+# Shopper
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Shopper is an online shopping app that takes care of all your shopping needs
 
-Things you may want to cover:
+Shopper is still in the development phase
 
-* Ruby version
+Present and future features:
 
-* System dependencies
+* Browse items to shop
 
-* Configuration
+* Add items to cart
 
-* Database creation
+* Shop items
 
-* Database initialization
+* Add items to wishlist
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
