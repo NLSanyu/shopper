@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 nav.header {
@@ -12,7 +12,7 @@ nav.header {
     padding-top: 15px;
     background-color: black;
     color: white;
-    font-size: 20px;
+    font-size: 1.3rem;
     text-align: center;
 
     a {
@@ -21,26 +21,21 @@ nav.header {
     }
 }
 
-div.itemListWrapper {
-    display: flex;
-    flex-direction: row;
-    align-content: stretch;
-}
-
-ul {
-    width: 100%;
+div.itemList {
     display: flex;
 }
 
 div.item {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     border: 1px solid #eee;
     width: 250px;
     height: 250px;
     margin: 20px;
     padding-bottom: 0px;
     text-align: center;
+    font-size: 1rem;
 }
 
 div.itemImage {

@@ -15,9 +15,7 @@ const ItemList = props => {
   ));
 
   return (
-      <div className="itemListWrapper">
-        <ul className="itemList">{eachItem}</ul>
-      </div>
+    <div className="itemList">{eachItem}</div>
   );
 
 }
