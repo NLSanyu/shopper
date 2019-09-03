@@ -1,23 +1,32 @@
 import React from "react";
-import Item from "./Item"
+import axios from "axios";
+import Item from "./Item";
 
-const ItemList = props => {
-  console.log(props.items[1].images)
+class ItemList extends React.Component {
+  state = {
+    items: []
+  };
 
-  const items = props.items ? props.items : [];
-  const eachItem = items.map(item => (
-    <Item
-      name={item.name}
-      description={item.description}
-      price={item.price}
-      images={item.images}
-    />
-  ));
+  componentDidMount() {
+    axios.get("/items").then(response => {
+      this.setState({ items: response.data.items });
+    });
+  }
 
-  return (
-    <div className="itemList">{eachItem}</div>
-  );
+  renderItems = () => {
+    return this.state.items.map(item => (
+      <Item
+        name={item.name}
+        description={item.description}
+        price={item.price}
+        images={item.images}
+      />
+    ));
+  };
 
+  render() {
+    return <div className="itemList">{this.renderItems()}</div>;
+  }
 }
 
-export default ItemList
+export default ItemList;
