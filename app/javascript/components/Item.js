@@ -5,8 +5,8 @@ class Item extends React.Component {
     return (
       <React.Fragment>
         <div className="item">
-          <div className="itemImage">{this.props.images}</div>
-          <div className="itemDetails">
+          <div className="item-image">{this.props.images}</div>
+          <div className="item-details">
             <p>{this.props.name}</p>
             <p>{this.props.description}</p>
             <p>{this.props.price}</p>

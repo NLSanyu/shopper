@@ -25,7 +25,7 @@ class ItemList extends React.Component {
   };
 
   render() {
-    return <div className="itemList">{this.renderItems()}</div>;
+    return <div className="item-list">{this.renderItems()}</div>;
   }
 }
 

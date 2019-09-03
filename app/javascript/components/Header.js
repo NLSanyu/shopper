@@ -1,15 +1,16 @@
 import React from "react"
-import PropTypes from "prop-types"
-class Header extends React.Component {
-  render () {
+import NavBar from "./NavBar"
+import HeaderImage from './images/tshirts-bg.jpg'
+
+const Header = () => {
     return (
-      <nav className="header">
-        <a>Home</a>
-        <a>About</a>
-        <a>Items</a>
-      </nav>
-    );
-  }
+      <div className="header"> 
+          <NavBar/>
+          <div className="header-image">
+            <img src={HeaderImage} alt="Image of tshirts"/>
+          </div>
+      </div>
+    );  
 }
 
 export default Header
