@@ -1,11 +1,13 @@
 import React from "react";
 import axios from "axios";
 import Item from "./Item";
-import SideNav from "./SideNav"
+import AddItem from "./AddItem";
+import SideNav from "./SideNav";
 
 class ItemList extends React.Component {
   state = {
-    items: []
+    items: [],
+    toggleAddItem: false
   };
 
   componentDidMount() {
@@ -15,7 +17,9 @@ class ItemList extends React.Component {
   }
 
   handleAddItem = () => {
-    alert("Add Item")
+    this.setState({
+      toggleAddItem: !this.state.toggleAddItem
+    })
   }
 
   renderItems = () => {
@@ -33,7 +37,7 @@ class ItemList extends React.Component {
     return <div className="item-list-wrapper">
       <SideNav handleAddItem={this.handleAddItem}/>
       <div className="item-list">
-        {this.renderItems()}
+        { this.state.toggleAddItem ? <AddItem/> : this.renderItems() }
       </div>
     </div>;
   }
