@@ -1,8 +1,8 @@
 import React from "react"
 import { Route, Switch } from 'react-router-dom'
-import ItemList from "./ItemList"
 import Header from "./Header"
-import NewItem from "./NewItem"
+import ItemList from "./ItemList"
+import NewItem from "./AddItem"
 
 class App extends React.Component {
   render () {
