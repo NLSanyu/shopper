@@ -72,7 +72,6 @@ body {
         position: relative;
         height: auto; 
         padding: 1rem;
-        width: 25%; 
         border: 1px solid #ddd;
         margin: 1.25rem;
         color: #364547;
@@ -84,6 +83,7 @@ body {
             padding: 0rem;
 
             li {
+                width: 15rem; 
                 font-weight: 400;
                 list-style-type: none;
                 margin: 1rem;
@@ -93,14 +93,26 @@ body {
                 border-radius: 1rem;
             }
 
-            div.filter-options {
+            li:hover {
+                background-color: #ffe883;
+                cursor: pointer;
+            }
 
-                padding: 0rem;
+            div.filter-options {
     
                 p {
-                    text-align: center;
+                    text-align: left;
                     border-radius: 1rem;
                     font-size: 0.9rem;
+                    margin-left: 15%;
+                    margin-right: 50%;
+                    padding-left: 1rem;
+                    width: auto;
+                }
+
+                p:hover {
+                    background-color: #fcf3f6;
+                    cursor: pointer;
                 }
             }
         }
@@ -111,7 +123,7 @@ body {
 .item-card {
     display: flex;
     flex-direction: column;
-    border: 1px solid #eee;
+    border: 0.5px solid #efefef;
     width: 13rem;
     height: 15rem;
     margin: 1.25rem;
@@ -136,6 +148,40 @@ body {
 
 .add-item {
     margin: 1.25rem;
+    color:  #1d2731;
+    font-size: 1.2rem;
+
+    .add-item-title {
+        text-align: center;
+        font-weight: 700;
+    }
+
+    form {
+        padding: 2rem;
+
+       .item-input {
+
+           input {
+               width: 300px;
+               height: 30px;
+               margin-top: 1rem;
+               margin-bottom: 0.5rem;
+           }
+       }
+
+       .submit-item {
+            margin-top: 1rem;
+            font-weight: 400;
+            font-size: 1rem;
+            list-style-type: none;
+            padding: 0.8rem;
+            background-color: #fff7d5;
+            text-align: center;
+            border: none;
+            border-radius: 1rem;
+            color: #364547;
+    }
+    }
 
 }
 

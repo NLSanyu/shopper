@@ -35,7 +35,7 @@ class ItemList extends React.Component {
 
   render() {
     return <div className="item-list-wrapper">
-      <SideNav handleAddItem={this.handleAddItem}/>
+      <SideNav handleAddItem={this.handleAddItem} itemOptionText={ this.state.toggleAddItem ? "View items" : "Add items" }/>
       <div className="item-list">
         { this.state.toggleAddItem ? <AddItem/> : this.renderItems() }
       </div>
