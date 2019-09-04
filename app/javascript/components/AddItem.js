@@ -1,7 +1,6 @@
 import React from "react";
 
-class AddItem extends React.Component {
-  render() {
+const AddItem = (props) => {
     return (
       <div className="add-item">
         <p className="add-item-title">
@@ -24,16 +23,20 @@ class AddItem extends React.Component {
             <br />
             <input name="item-price" type="text"></input>
           </div>
+          <div className="item-input">
+            <label>Add photos of your item</label>
+            <br />
+            <input name="item-price" type="file"></input>
+          </div>
           <input
             type="submit"
             value={"Add item"}
             className="submit-item"
-            onClick={console.log("Add item")}
+            onClick={props.submitNewItem}
           />
         </form>
       </div>
     );
-  }
 }
 
 export default AddItem;
