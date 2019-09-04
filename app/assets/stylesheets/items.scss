@@ -98,9 +98,10 @@ body {
                 padding: 0rem;
     
                 p {
-                    text-align: center;
+                    text-align: left;
                     border-radius: 1rem;
                     font-size: 0.9rem;
+                    margin-left: 15%;
                 }
             }
         }
@@ -111,7 +112,7 @@ body {
 .item-card {
     display: flex;
     flex-direction: column;
-    border: 1px solid #eee;
+    border: 0.5px solid #efefef;
     width: 13rem;
     height: 15rem;
     margin: 1.25rem;
@@ -132,6 +133,10 @@ body {
     flex-basis: 40%;
     padding: 0.625rem;
     color: #364547;
+}
+
+.add-item {
+    margin: 1.25rem;
 
 }
 
