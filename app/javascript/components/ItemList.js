@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Item from "./Item";
+import SideNav from "./SideNav"
 
 class ItemList extends React.Component {
   state = {
@@ -11,6 +12,10 @@ class ItemList extends React.Component {
     axios.get("/items").then(response => {
       this.setState({ items: response.data.items });
     });
+  }
+
+  handleAddItem = () => {
+    alert("Add Item")
   }
 
   renderItems = () => {
@@ -25,7 +30,12 @@ class ItemList extends React.Component {
   };
 
   render() {
-    return <div className="item-list">{this.renderItems()}</div>;
+    return <div className="item-list-wrapper">
+      <SideNav handleAddItem={this.handleAddItem}/>
+      <div className="item-list">
+        {this.renderItems()}
+      </div>
+    </div>;
   }
 }
 

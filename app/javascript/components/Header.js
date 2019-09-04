@@ -7,6 +7,7 @@ const Header = () => {
       <div className="header"> 
           <NavBar/>
           <div className="header-image">
+            <div className="shopper-tagline">Buy and sell items online, anywhere, anytime!</div>
             <img src={HeaderImage} alt="Image of tshirts"/>
           </div>
       </div>

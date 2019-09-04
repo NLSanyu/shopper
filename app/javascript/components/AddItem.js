@@ -1,17 +1,15 @@
 import React from "react"
 
-class NewItem extends React.Component {
+class AddItem extends React.Component {
   render () {
     return (
-      <React.Fragment>
-        <div className="item">
+        <div className="add-item">
           <div className="itemDetails">
             New Item
           </div>
         </div>
-      </React.Fragment>
     );
   }
 }
 
-export default NewItem
+export default AddItem
