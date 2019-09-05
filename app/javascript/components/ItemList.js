@@ -19,25 +19,13 @@ class ItemList extends React.Component {
   handleAddItem = () => {
     this.setState({
       toggleAddItem: !this.state.toggleAddItem
-    })
-  }
-
-  submitNewItem = (name, description, price, image) => {
-    console.log("Submit new item")
-    axios.post("/items/new", {
-      name: name,
-      description: description,
-      price: price,
-      image: image
-    })
-    .then(response => {
-      console.log(response.data)
     });
-  }
+  };
 
   renderItems = () => {
     return this.state.items.map(item => (
       <Item
+        key={item.id}
         name={item.name}
         description={item.description}
         price={item.price}
@@ -47,12 +35,21 @@ class ItemList extends React.Component {
   };
 
   render() {
-    return <div className="item-list-wrapper">
-      <SideNav handleAddItem={this.handleAddItem} itemOptionText={ this.state.toggleAddItem ? "View items" : "Add items" }/>
-      <div className="item-list">
-        { this.state.toggleAddItem ? <AddItem submitNewItem={this.submitNewItem}/> : this.renderItems() }
+    return (
+      <div className="item-list-wrapper">
+        <SideNav
+          handleAddItem={this.handleAddItem}
+          itemOptionText={this.state.toggleAddItem ? "View items" : "Add item"}
+        />
+        <div className="item-list">
+          {this.state.toggleAddItem ? (
+            <AddItem/>
+          ) : (
+            this.renderItems()
+          )}
+        </div>
       </div>
-    </div>;
+    );
   }
 }
 

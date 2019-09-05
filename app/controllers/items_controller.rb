@@ -26,16 +26,19 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
-
-    respond_to do |format|
-      if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
-        format.json { render :show, status: :created, location: @item }
-      else
-        format.html { render :new }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
-      end
+    if @item.save
+      render json: @item
     end
+
+    # if @item.save
+    #   # format.html { redirect_to @item, notice: 'Item was successfully created.' }
+    #   # format.json { render :show, status: :created, location: @item }
+    #   render json: @item
+    # else
+    #   # format.html { render :new }
+    #   # format.json { render json: @item.errors, status: :unprocessable_entity }
+    #   render json: @item
+    # end
   end
 
   # PATCH/PUT /items/1
@@ -68,6 +71,6 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:name, :description, :price, images: [])
+      params.require(:item).permit(:name, :description, :price, :image)
     end
 end
