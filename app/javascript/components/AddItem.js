@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { passCsrfToken } from '../util/helpers'
+import { passCsrfToken } from "../util/helpers";
 
 class AddItem extends React.Component {
   constructor(props) {
@@ -16,27 +16,26 @@ class AddItem extends React.Component {
   }
 
   componentDidMount() {
-    passCsrfToken(document, axios)
+    passCsrfToken(document, axios);
   }
 
-  inputChange = event => {
+  handleInputChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
   submitNewItem = event => {
     event.preventDefault();
-
     const item = {
-        name: this.state.name,
-        description: this.state.description,
-        price: this.state.price
-        // image: this.state.image
-    }
+      name: this.state.name,
+      description: this.state.description,
+      price: this.state.price,
+      image: this.state.image
+    };
 
     axios
       .post("/items", item)
       .then(response => {
-        console.log(response);
+        this.props.toggleAddItem();
       })
       .catch(error => {
         console.log(error);
@@ -89,7 +88,7 @@ class AddItem extends React.Component {
           </div>
           <button
             className="submit-item"
-            // onClick={this.submitNewItem}
+            onClick={this.submitNewItem}
           >
             Add item
           </button>

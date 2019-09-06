@@ -1,14 +1,14 @@
-import React from "react"
-import { Route, Switch } from 'react-router-dom'
-import Header from "./Header"
-import ItemList from "./ItemList"
-import NewItem from "./AddItem"
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Header from './Header';
+import ItemList from './ItemList';
+import NewItem from './AddItem';
 
 class App extends React.Component {
-  render () {
+  render() {
     return (
       <div>
-        <Header/>
+        <Header />
         <Switch>
           <Route exact path="/" component={ItemList} />
           <Route exact path="/items" component={ItemList} />
@@ -19,4 +19,4 @@ class App extends React.Component {
   }
 }
 
-export default App
+export default App;
