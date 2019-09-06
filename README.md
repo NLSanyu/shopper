@@ -1,5 +1,6 @@
 # Shopper
 
+```
 Shopper is an online shopping app that takes care of all your shopping needs
 
 Shopper is still in the development phase
@@ -13,5 +14,8 @@ Present and future features:
 * Shop items
 
 * Add items to wishlist
+```
 
 
+
+### Developed in React-Rails (Rails back end with a React front end)

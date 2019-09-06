@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
-    render json: { items: @items }
+    render json: { items: @items.with_attached_image }
   end
 
   # GET /items/1
@@ -29,16 +29,6 @@ class ItemsController < ApplicationController
     if @item.save
       render json: @item
     end
-
-    # if @item.save
-    #   # format.html { redirect_to @item, notice: 'Item was successfully created.' }
-    #   # format.json { render :show, status: :created, location: @item }
-    #   render json: @item
-    # else
-    #   # format.html { render :new }
-    #   # format.json { render json: @item.errors, status: :unprocessable_entity }
-    #   render json: @item
-    # end
   end
 
   # PATCH/PUT /items/1

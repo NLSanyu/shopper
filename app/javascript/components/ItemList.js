@@ -16,7 +16,7 @@ class ItemList extends React.Component {
     });
   }
 
-  handleAddItem = () => {
+  toggleAddItem = () => {
     this.setState({
       toggleAddItem: !this.state.toggleAddItem
     });
@@ -29,7 +29,7 @@ class ItemList extends React.Component {
         name={item.name}
         description={item.description}
         price={item.price}
-        images={item.images}
+        image={item.image}
       />
     ));
   };
@@ -38,15 +38,11 @@ class ItemList extends React.Component {
     return (
       <div className="item-list-wrapper">
         <SideNav
-          handleAddItem={this.handleAddItem}
+          toggleAddItem={this.toggleAddItem}
           itemOptionText={this.state.toggleAddItem ? "View items" : "Add item"}
         />
         <div className="item-list">
-          {this.state.toggleAddItem ? (
-            <AddItem/>
-          ) : (
-            this.renderItems()
-          )}
+          {this.state.toggleAddItem ? <AddItem toggleAddItem={this.toggleAddItem}/> : this.renderItems()}
         </div>
       </div>
     );
